@@ -1,0 +1,14 @@
+{
+  "name": "optimalprime",
+  "version": "1.0.0",
+  "description": "Optimalprime SDK for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Optimalprime",
+  "license": "ISC",
+  "dependencies": {
+    "pusher-client": "^0.2.3"
+  }
+}
