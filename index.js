@@ -19,6 +19,13 @@ var Optimalprime = {
   },
 
   /**
+   * Shouldn't be needed except for testing and dev
+   */
+  setConfig: function(config) {
+    this.config = config;
+  },
+
+  /**
    * Currency constants. Please use these to match with incoming data.
    */
   currencies: currencies,
@@ -42,8 +49,13 @@ var Optimalprime = {
     this.pusherClient = new Pusher(APP_ID, this.config);
   },
 
+  /**
+   * Start getting data
+   * @param  {Function} callback Function(data). Will be called when there is
+   *   new data to read.
+   */
   start: function(callback) {
-    var channel = pusher.subscribe('private-depth');
+    var channel = this.pusherClient.subscribe('private-depth');
     channel.bind('data', function(data) {
       callback(data);
     });
