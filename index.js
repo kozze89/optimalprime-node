@@ -39,13 +39,11 @@ var Optimalprime = {
   /**
    * Initialize the optimalprime SDK. Pass the username and password that you've
    * registered with.
-   * @param  {String} username This would be your email
-   * @param  {[type]} password Your account password
+   * @param  {String} apiToken This is the token you can find on your account
+   *   page
    */
-  initialize: function(username, password) {
-    this.config.auth.params.username = username;
-    this.config.auth.params.password = username;
-
+  initialize: function(apiToken) {
+    this.config.auth.params.user_token = apiToken;
     this.pusherClient = new Pusher(APP_ID, this.config);
   },
 
@@ -55,7 +53,7 @@ var Optimalprime = {
    *   new data to read.
    */
   start: function(callback) {
-    var channel = this.pusherClient.subscribe('private-depth');
+    var channel = this.pusherClient.subscribe('private-depth-sandbox');
     channel.bind('data', function(data) {
       callback(data);
     });
