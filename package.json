@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Optimalprime",
+  "author": "Optimalprime <admin@optimalprime.io>",
   "license": "ISC",
   "dependencies": {
     "pusher-client": "^0.2.3"
