@@ -4,7 +4,7 @@ This is an SDK for: [https://optimalprime.io](https://optimalprime.io)
 
 
 Example usage:
-```
+```javascript
 var optimalprime = require('optimalprime');
 
 // Load up the SDK
